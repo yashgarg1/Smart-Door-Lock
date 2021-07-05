@@ -1,0 +1,23 @@
+Long open_time = 0;
+Int state = 0;
+
+void setup() {
+int PIN_LOCK = 8;
+pinMode(PIN_LOCK, OUTPUT);
+Serial.begin(9600);
+}
+
+void loop() {
+if (state == 0) {
+if (serial.available()) {
+char c = serial.read();
+
+if (c=='1') {
+digitalWrite(LOCK_PIN, HIGH);
+open_time=millis();
+state = 1;
+}} else {
+if (millis() - open_time > 60) {
+digitalWrite(LOCK_PIN, LOW);
+state = 0;
+}}
