@@ -1,2 +1,2 @@
-# First-Codes
-My first trying on developing
+# SMART DOOR LOCK
+The objective is to make a smart door lock using face detection and recognition.
